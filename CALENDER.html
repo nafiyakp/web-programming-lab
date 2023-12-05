@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<title>calender genarator</title>
+<style>
+body{
+font-family:Arial,sans-serit;
+}
+</style>
+</head>
+<body>
+<script>
+const year=parseInt(prompt("enter a year:"));
+if(!is NaN(year))
+{
+document.write("<prev>");
+for(let month=1;mont<=12;month++)
+{
+const monthDate=new Date(year,month-1,1)
+document.write("\n${monthDate.toLocalestring('default',{mont:'long'})}${year}\n');
+const firstDay=monthDate.getDay();
+document.write(sun mon tues wed thu fri sat\n")
+for (let i=0;i<firstday;i++)
+{
+document.write("");
+}
+let currentDate=new Date(year,month-1,1);
+while(currentDate.getMonth()===month-1)
+{
+const day=currentDate.getDate();
+document.write('${day<10?' ':"}${day}');
+if(currentDate.getDay()===6){
+document.write("/n");
+}
+currentDate.setDate(currentDate.getDate()+1);
+}
+document.write("/n");
+}
+document.write("</prev>");
+}else{
+alert("invalid input,please enter a valid year");
+}
+</script>
+</body>
+</html>
